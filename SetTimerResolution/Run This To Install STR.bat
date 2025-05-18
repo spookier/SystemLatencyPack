@@ -23,15 +23,17 @@ echo ======================================================
 echo.
 echo      1. Install
 echo      2. Uninstall
-echo      3. Exit
+echo      3. Check Your Current Timer Value
+echo      4. Exit
 echo.
 echo ======================================================
 echo.
-set /p choice=  Select an option (1-3): 
+set /p choice=  Select an option (1-4): 
 
 if "%choice%"=="1" goto INSTALL
 if "%choice%"=="2" goto UNINSTALL
-if "%choice%"=="3" exit
+if "%choice%"=="3" goto RUN_MEASURESLEEP
+if "%choice%"=="4" exit
 goto MENU
 
 :INSTALL
@@ -223,3 +225,29 @@ echo [INFO] Please restart your PC for all changes to take effect.
 echo.
 pause
 goto MENU
+
+:RUN_MEASURESLEEP
+cls
+echo.
+echo ======================================================
+echo   Running MeasureSleep.exe from the installation folder
+echo ======================================================
+echo.
+
+set "MEASURE_EXE=%~dp0installation\MeasureSleep.exe"
+
+if not exist "%MEASURE_EXE%" (
+    echo [ERROR] MeasureSleep.exe not found in: %~dp0installation
+    echo Please copy it there and try again.
+    pause
+    goto MENU
+)
+
+REM --- Run the executable normally ---
+start "" "%MEASURE_EXE%"
+echo [SUCCESS] MeasureSleep.exe has been launched.
+echo.
+pause
+goto MENU
+
+

@@ -41,15 +41,6 @@ echo          [INFO] Applying TSC Performance Mode...
 echo ======================================================
 echo.
 
-bcdedit /set bootux disabled
-if %errorlevel% neq 0 echo [WARNING] Could not set bootux.
-bcdedit /set tscsyncpolicy enhanced
-if %errorlevel% neq 0 echo [WARNING] Could not set tscsyncpolicy.
-bcdedit /set uselegacyapicmode No
-if %errorlevel% neq 0 echo [WARNING] Could not set uselegacyapicmode.
-bcdedit /set x2apicpolicy Enable
-if %errorlevel% neq 0 echo [WARNING] Could not set x2apicpolicy.
-
 bcdedit /deletevalue useplatformclock
 bcdedit /deletevalue useplatformtick
 
@@ -66,18 +57,6 @@ echo ======================================================
 echo          [INFO] Restoring Windows Defaults...
 echo ======================================================
 echo.
-
-bcdedit /deletevalue bootux
-if %errorlevel% neq 0 echo [INFO] bootux was not set or already default.
-
-bcdedit /deletevalue tscsyncpolicy
-if %errorlevel% neq 0 echo [INFO] tscsyncpolicy was not set or already default.
-
-bcdedit /deletevalue uselegacyapicmode
-if %errorlevel% neq 0 echo [INFO] uselegacyapicmode was not set or already default.
-
-bcdedit /deletevalue x2apicpolicy
-if %errorlevel% neq 0 echo [INFO] x2apicpolicy was not set or already default.
 
 bcdedit /deletevalue useplatformclock
 if %errorlevel% neq 0 echo [INFO] useplatformclock was not set or already default.
