@@ -25,7 +25,9 @@ Two different scripts for Windows, both optimized for the smoothest mouse respon
 
 ## 🛠 How to Use
 
-### 1. Choose Only One Method
+### 1. [Download the ZIP](https://github.com/spookier/SystemLatencyPack/releases/download/release/SystemLatencyPack.rar) and extract it anywhere
+
+### 2. Choose Only One Method
 
 Pick either:
 - Run `SetTimerResolution/Run This To Install STR.bat`  
@@ -34,7 +36,7 @@ Pick either:
 
 > ❗ Again: **do not use both at the same time**. If you want to switch, uninstall the one you're using first.
 
-### 2. Follow the On-Screen Menu
+### 3. Follow the On-Screen Menu
 
 Each tweak includes:
 - A simple menu
